@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neodel Counter</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <div id="counter-box">
+        <h1 id="counter">0</h1>
+    </div>
+    <div id="counter-btns">
+        <button onclick="decrement()">-</button>
+        <button onclick="increment()">+</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+        var count = 0;
+        
+        function update() {
+            document.getElementById("counter").innerHTML = String(count);
+            console.log(count)
+        }
+
+        function decrement() {
+            count--;
+            update();
+        }
+
+        function increment() {
+            count++;
+            update();
+        }
+        
+        function reset() {
+            count = 0;
+            update();
+        }
+    </script>
+</body>
+</html>
