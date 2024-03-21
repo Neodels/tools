@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neodel Counter</title>
+
+    <style>
+        #no {
+            background-image: url("img/blob-haikei.svg");
+        }
+    </style>
 </head>
 <body>
     <h1>Counter</h1>
@@ -17,11 +23,22 @@
     </div>
 
     <script>
-        var count = 0;
+        var count;
+
+        // check if a value is saved in the local storage
+        if (localStorage.getItem("count") !== null) {
+            count = localStorage.getItem("count");
+        } else {
+            count = 0;
+        }
+
+        update();
         
+        // update the counter
         function update() {
             document.getElementById("counter").innerHTML = String(count);
-            console.log(count)
+            localStorage.setItem("count", count);
+            console.log(count);
         }
 
         function decrement() {
